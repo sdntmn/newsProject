@@ -1,5 +1,5 @@
 {
-  "name": "nameproject",
+  "name": "newsproject",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
@@ -20,5 +20,16 @@
   "devDependencies": {
     "@babel/core": "^7.12.9"
   },
-  "private": true
+  "private": true,
+  "description": "react native",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sdntmn/newsProject.git"
+  },
+  "author": "sdn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sdntmn/newsProject/issues"
+  },
+  "homepage": "https://github.com/sdntmn/newsProject#readme"
 }
