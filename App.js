@@ -4,7 +4,7 @@ import AppLoading from "expo-app-loading";
 import { globalStyle } from "./styles/style";
 import * as Font from "expo-font";
 import { useState } from "react";
-import Main from "./components/Main";
+import MainStack from "./navigate";
 
 export default function App() {
   const [font, setFont] = useState(false);
@@ -17,7 +17,7 @@ export default function App() {
   }
 
   if (font) {
-    return <Main />;
+    return <MainStack />;
   }
   return (
     <AppLoading
