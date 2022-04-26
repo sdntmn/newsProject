@@ -87,9 +87,6 @@ export default function Form({ addArticle }) {
             <View style={styles.inputBtn}>
               <Button title='Добавить' onPress={props.handleSubmit} />
             </View>
-            <View style={styles.inputBtn}>
-              <Button title='Очистить' onPress={pressedClear} />
-            </View>
           </View>
         )}
       </Formik>
