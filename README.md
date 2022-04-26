@@ -1,4 +1,4 @@
-# newsProject
+# newsProject Test
 
 news project on the react native
 
@@ -19,5 +19,3 @@ news project on the react native
 
 - Установка библиотеки формы
 - yarn add formik react-native-formik
-
-### Учебный контент
