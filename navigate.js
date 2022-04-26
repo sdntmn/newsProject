@@ -1,14 +1,33 @@
+import * as Analytics from "expo-firebase-analytics";
+import React, { useRef } from "react";
 import Main from "./components/Main";
 import FullInfo from "./components/FullInfo";
 
-import { NavigationContainer } from "@react-navigation/native";
+import {
+  NavigationContainer,
+  useNavigationContainerRef,
+} from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-const Stack = createNativeStackNavigator();
-
 export default function Navigate() {
+  const Stack = createNativeStackNavigator();
+  const navigationRef = useNavigationContainerRef();
+  const routeNameRef = useRef();
   return (
-    <NavigationContainer>
+    <NavigationContainer
+      ref={navigationRef}
+      onReady={() => {
+        routeNameRef.current = navigationRef.getCurrentRoute().name;
+      }}
+      onStateChange={async () => {
+        const previousRouteName = routeNameRef.current;
+        const currentRouteName = navigationRef.getCurrentRoute().name;
+
+        if (previousRouteName !== currentRouteName) {
+          await Analytics.setCurrentScreen(currentRouteName);
+        }
+        routeNameRef.current = currentRouteName;
+      }}>
       <Stack.Navigator>
         <Stack.Screen
           name='Main'

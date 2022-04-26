@@ -54,16 +54,18 @@ export default function Main({ navigation }) {
   return (
     <View style={globalStyle.main}>
       <Modal animationType='fade' visible={modalVisible}>
-        <MaterialCommunityIcons
-          style={styles.modalClose}
-          name='window-close'
-          size={24}
-          color='black'
-          onPress={() => setModalVisible(false)}
-        />
-        <View style={styles.centeredView}>
-          <Text style={styles.title}>Форма добавления статьи</Text>
-          <Form addArticle={addArticle} />
+        <View style={{ flex: 1 }}>
+          <MaterialCommunityIcons
+            style={styles.modalClose}
+            name='window-close'
+            size={24}
+            color='black'
+            onPress={() => setModalVisible(false)}
+          />
+          <View style={styles.centeredView}>
+            <Text style={styles.title}>Форма добавления статьи</Text>
+            <Form addArticle={addArticle} />
+          </View>
         </View>
       </Modal>
       <MaterialIcons
@@ -99,6 +101,7 @@ export default function Main({ navigation }) {
 const styles = StyleSheet.create({
   modalClose: {
     justifyContent: "center",
+    alignItems: "flex-end",
 
     marginTop: 22,
   },
